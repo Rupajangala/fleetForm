@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300" />
     <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <script src="/Users/rupa/Documents/FormValidations/js/jquery.js "></script>
 </head>
 
 <body>
@@ -23,13 +24,25 @@
             <div>
                 <label for="booking_id">
                       <span class="required ">Booking ID: *</span> <br>
+                      <div class="Server_error" id="bookingError">
+                        
+                    </div>
                       <input type="text" id="booking_id" name="booking_id"  placeholder="ASDGFA123" required="required"  autofocus="autofocus" />
+                      <div class="field_error" id="fieldError">
+                          
+                          </div>
                   </label>
             </div>
             <div>
                 <label for="vehicle_number">
                       <span class="required ">Vehicle Number: *</span><br>
+                      <div class="Server_error" id="vehicleError">
+                        
+                        </div>
                       <input type="text" id="vehicle_number" name="vehicle_number" placeholder="KA HD 0087" required="required" />
+                      <div class="field_error" id="fieldError">
+                          
+                        </div>
                   </label>
             </div>
             <div>
@@ -42,21 +55,40 @@
 
                 <span class="required image">IMAGE: *</span><br>
                 <!-- <span class="text">Please upload an Image</span> <br> -->
-                <label class="photo" for="photo">Upload Photo
-                    <img>
+                <div class="Server_error" id="photoError ">
+
+                </div>
+                <label class="photo" for="photo"><span id="photo_label">Upload Photo</span>
+                    <img id ="upload" src="" alt="">
                 </label>
-                <input id="photo" type="file" accept="image/*" capture="camera">
+                <input id="photo" type="file" accept="image/*" capture="camera" onchange="readURL(this)">
+                <div class="field_error" id="fieldError ">
+
+                </div>
 
             </div>
-            <div class="submit">
+            <div class="submit ">
                 <button name="submit" type="submit" id="submit">Submit</button>
             </div>
         </form>
 
     </div>
-    <div class="link_expire">
-
+    <div class="link_expire_container" id="link_expire_container">
+        <div class="sub_container" id="sub_container">
+            <!-- <a href="# " class="close " data-dismiss="alert ">&times;</a> -->
+            <!-- <strong>Error!</strong> Link got Expire..
+            <p>Please contact the customercare</p> -->
+        </div>
     </div>
+
+    <section class="timer_sec" id="timer">
+        <div class="timer_wrap">
+            your link will get Expire in
+            <spna id="seconds">30</spna> sec...
+        </div>
+    </section>
+
+    <script src="/Users/rupa/Documents/FormValidations/js/main.js"></script>
 </body>
 
 </html>
